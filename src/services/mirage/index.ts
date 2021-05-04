@@ -32,7 +32,7 @@ export function makeServer() {
     },
 
     seeds(server) {
-      server.createList("user", 200);
+      server.createList("user", 100);
     },
 
     routes() {
@@ -62,6 +62,7 @@ export function makeServer() {
       this.post("/users");
 
       this.namespace = "";
+      this.passthrough()
     },
   });
 

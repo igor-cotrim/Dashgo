@@ -23,9 +23,10 @@ import { RiAddLine } from "react-icons/ri";
 import { Sidebar } from "../../components/Sidebar";
 import { Header } from "../../components/Header";
 import Pagination from "../../components/Pagination";
-import { useUsers } from "../../services/hooks/useUsers";
+import { getUsers, useUsers } from "../../services/hooks/useUsers";
 import { queryClient } from "../../services/queryClient";
 import { api } from "../../services/api";
+import { GetServerSideProps } from "next";
 
 export default function UserList() {
   const [page, setPage] = useState(1)
@@ -132,3 +133,13 @@ export default function UserList() {
     </Box>
   );
 }
+
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   const {users, totalCount} = await getUsers(1);
+
+//   return {
+//     props: {
+//       users
+//     }
+//   }
+// }
